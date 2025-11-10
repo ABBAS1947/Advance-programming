@@ -1,0 +1,11 @@
+10
+8439,Jake Hobbs,10,11,10,43
+7234,Fred Smith,15,18,16,67
+6891,Jo Huckleberry,12,14,13,55
+5623,Emma Wilson,18,19,17,82
+9012,Tom Anderson,8,9,7,38
+4567,Sarah Brown,16,15,17,71
+3421,Mike Johnson,11,10,12,48
+7890,Lisa Davis,19,20,18,91
+6543,Chris Taylor,13,12,14,62
+8765,Anna Martinez,14,16,15,73
