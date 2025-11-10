@@ -13,16 +13,16 @@ def update_greeting():
         label_display.config(text="Please enter your name!", fg="red")
 
 
-# Create main window
+
 root = tk.Tk()
 root.title("Greeting App")
 root.geometry("500x400")
 
-# InputFrame
+
 input_frame = tk.Frame(root, bg="#E3F2FD", bd=5, relief=tk.RAISED)
 input_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
-# Title label in blue
+
 title_label = tk.Label(
     input_frame,
     text="Greeting Application",
@@ -32,7 +32,7 @@ title_label = tk.Label(
 )
 title_label.pack(pady=20)
 
-# Entry field for name
+
 name_frame = tk.Frame(input_frame, bg="#E3F2FD")
 name_frame.pack(pady=10)
 
@@ -47,7 +47,7 @@ label_name.pack(side=tk.LEFT, padx=5)
 entry_name = tk.Entry(name_frame, font=("Arial", 12), width=20)
 entry_name.pack(side=tk.LEFT, padx=5)
 
-# Color dropdown
+
 color_frame = tk.Frame(input_frame, bg="#E3F2FD")
 color_frame.pack(pady=10)
 
@@ -71,7 +71,7 @@ color_dropdown = ttk.Combobox(
 )
 color_dropdown.pack(side=tk.LEFT, padx=5)
 
-# Update button
+
 btn_update = tk.Button(
     input_frame,
     text="Update Greeting",
@@ -83,11 +83,11 @@ btn_update = tk.Button(
 )
 btn_update.pack(pady=20)
 
-# DisplayFrame
+
 display_frame = tk.Frame(root, bg="#FFF9C4", bd=5, relief=tk.SUNKEN)
 display_frame.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
 
-# Display label
+
 label_display = tk.Label(
     display_frame,
     text="",

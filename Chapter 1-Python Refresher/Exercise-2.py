@@ -4,7 +4,7 @@ print("Enter second number:")
 num2 = int(input())
 
 print(f"\nSum (+): {num1} + {num2} = {num1 + num2}")
-print(f"Diff (-): {num1} - {num2} = {num1 - num2}")
+print(f"Difference (-): {num1} - {num2} = {num1 - num2}")
 print(f"Product (x): {num1} x {num2} = {num1 * num2}")
 print(f"Quotient (/): {num1} / {num2} = {num1 / num2}")
 print(f"Remainder (%): {num1} % {num2} = {num1 % num2}")

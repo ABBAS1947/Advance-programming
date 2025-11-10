@@ -5,20 +5,21 @@ from tkinter import messagebox
 def login():
     username = entry_username.get()
     password = entry_password.get()
-
-    if username == "admin" and password == "password":
+# we can make a sign up first that collect a username and password but for now it is too much.
+    # so this usees pre written username which is "Abbas" and the password is "meesam"
+    if username == "Abbas" and password == "meesam":
         messagebox.showinfo("Login", "Login Successful!")
     else:
         messagebox.showerror("Login", "Invalid Username or Password")
 
 
-# Create main window
+
 root = tk.Tk()
 root.title("Login Page")
 root.geometry("350x200")
 root.configure(bg="#F0F0F0")
 
-# Create title label
+
 title_label = tk.Label(
     root,
     text="Login System",
@@ -27,7 +28,7 @@ title_label = tk.Label(
 )
 title_label.grid(row=0, column=0, columnspan=2, pady=20)
 
-# Username label and entry
+
 label_username = tk.Label(
     root,
     text="Username:",
@@ -39,7 +40,7 @@ label_username.grid(row=1, column=0, padx=10, pady=10, sticky="e")
 entry_username = tk.Entry(root, font=("Arial", 12), width=20)
 entry_username.grid(row=1, column=1, padx=10, pady=10)
 
-# Password label and entry
+
 label_password = tk.Label(
     root,
     text="Password:",

@@ -5,6 +5,9 @@ num2 = float(input())
 print("Enter third number:")
 num3 = float(input())
 
+# this is the simplest method to find the greatest number from the user input
+# we check the num 1 and 2 first and if the none are correct then num 3 is greatest
+
 if num1 >= num2 and num1 >= num3:
     print(f"The largest number is: {num1}")
 elif num2 >= num1 and num2 >= num3:

@@ -6,16 +6,16 @@ from datetime import date
 def calculate_age():
     try:
         dob = entry_dob.get()
-        # Parse the date (format: month/day/year)
+
         month, day, year = map(int, dob.split('/'))
 
         birth_date = date(year, month, day)
         today = date.today()
 
-        # Calculate age
+
         age = today.year - birth_date.year
 
-        # Adjust if birthday hasn't occurred this year
+
         if (today.month, today.day) < (birth_date.month, birth_date.day):
             age -= 1
 
@@ -31,13 +31,13 @@ def clear():
     label_result.config(text="")
 
 
-# Create main window
+
 root = tk.Tk()
 root.title("Age Calculator")
 root.geometry("400x300")
 root.configure(bg="#FFF3E0")
 
-# Title
+
 title_label = tk.Label(
     root,
     text="Age Calculator",
@@ -47,7 +47,7 @@ title_label = tk.Label(
 )
 title_label.pack(pady=30)
 
-# Input frame
+
 input_frame = tk.Frame(root, bg="#FFF3E0")
 input_frame.pack(pady=20)
 
@@ -62,7 +62,7 @@ label_dob.pack(side=tk.LEFT, padx=10)
 entry_dob = tk.Entry(input_frame, font=("Arial", 12), width=15)
 entry_dob.pack(side=tk.LEFT, padx=10)
 
-# Button frame
+
 button_frame = tk.Frame(root, bg="#FFF3E0")
 button_frame.pack(pady=20)
 
@@ -88,7 +88,7 @@ btn_clear = tk.Button(
 )
 btn_clear.pack(side=tk.LEFT, padx=5)
 
-# Result label
+
 label_result = tk.Label(
     root,
     text="",

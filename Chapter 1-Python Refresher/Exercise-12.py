@@ -1,22 +1,39 @@
-# Create a tuple with values
-year = (2017, 2003, 2011, 2005, 1987, 2009, 2020, 2018, 2009)
+import math
 
-# Access the value at index -3
-print(f"Value at index -3: {year[-3]}")
+def area_square():
+    print("Enter the length of the square:")
+    length = float(input())
+    area = length ** 2
+    print(f"The area of the square is: {area}")
 
-# Reverse the tuple and print both
-reversed_year = tuple(reversed(year))
-print(f"\nOriginal tuple: {year}")
-print(f"Reversed tuple: {reversed_year}")
+def area_circle():
+    print("Enter the radius of the circle:")
+    radius = float(input())
+    area = math.pi * (radius ** 2)
+    print(f"The area of the circle is: {area:.2f}")
 
-# Count number of times 2009 is in the tuple
-count_2009 = year.count(2009)
-print(f"\nNumber of times 2009 appears: {count_2009}")
+def area_triangle():
+    print("Enter the base of the triangle:")
+    base = float(input())
+    print("Enter the height of the triangle:")
+    height = float(input())
+    area = 0.5 * base * height
+    print(f"The area of the triangle is: {area}")
 
-# Get the index value of 2018
-index_2018 = year.index(2018)
-print(f"Index of 2018: {index_2018}")
+# so we just defined the function till now which process the input from the user.
+# here is the where the main code is running.
+print("Choose an option:")
+print("1: Calculate the area of a square")
+print("2: Calculate the area of a circle")
+print("3: Calculate the area of a triangle")
 
-# Find length of given tuple
-length = len(year)
-print(f"Length of tuple: {length}")
+choice = int(input())
+
+if choice == 1:
+    area_square()
+elif choice == 2:
+    area_circle()
+elif choice == 3:
+    area_triangle()
+else:
+    print("Invalid choice!")

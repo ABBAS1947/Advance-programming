@@ -5,7 +5,7 @@ from tkinter import messagebox
 def make_coffee():
     coffee_type = coffee_var.get()
 
-    # Get selected options
+
     options = []
     if sugar_var.get():
         options.append("Sugar")
@@ -20,7 +20,7 @@ def make_coffee():
         messagebox.showerror("Error", "Please select a coffee type!")
         return
 
-    # Calculate price
+
     prices = {
         "Espresso": 3.00,
         "Cappuccino": 4.50,
@@ -30,9 +30,7 @@ def make_coffee():
     }
 
     total_price = prices[coffee_type]
-    total_price += len(options) * 0.50  # Each option adds $0.50
-
-    # Create order message
+    total_price += len(options) * 0.50
     message = f"Order Summary:\n\n"
     message += f"Coffee Type: {coffee_type}\n"
     if options:
@@ -52,23 +50,23 @@ def reset_order():
     vanilla_var.set(False)
 
 
-# Create main window
+
 root = tk.Tk()
 root.title("Coffee Vending Machine")
 root.geometry("450x550")
 root.configure(bg="#6D4C41")
 
-# Title with coffee emoji
+
 title_label = tk.Label(
     root,
-    text="☕ Coffee Vending Machine ☕",
+    text="Coffee Vending Machine",
     font=("Arial", 20, "bold"),
     bg="#6D4C41",
     fg="white"
 )
 title_label.pack(pady=20)
 
-# Coffee selection frame
+
 coffee_frame = tk.LabelFrame(
     root,
     text="Select Coffee Type",
@@ -94,7 +92,7 @@ for coffee in coffees:
     )
     rb.pack(anchor=tk.W, padx=20, pady=5)
 
-# Options frame
+
 options_frame = tk.LabelFrame(
     root,
     text="Select Add-ons",
@@ -150,7 +148,7 @@ cb_vanilla = tk.Checkbutton(
 )
 cb_vanilla.pack(anchor=tk.W, padx=20, pady=5)
 
-# Button frame
+
 button_frame = tk.Frame(root, bg="#6D4C41")
 button_frame.pack(pady=20)
 

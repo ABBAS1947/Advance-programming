@@ -1,10 +1,10 @@
-print("Hello, user!")
+print("Hello")
 print("What is your name?")
 name = input()
 print("What is your age?")
 age = int(input())
 
-print(f"It is good to meet you, {name.title()}")
+print(f"It is good to meet you,",name)
 print("The length of your name is:")
 print(len(name))
 print(f"You will be {age + 1} in a year.")

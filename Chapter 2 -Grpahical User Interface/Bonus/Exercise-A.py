@@ -21,13 +21,13 @@ def clear():
     entry_temp.delete(0, tk.END)
     label_result.config(text="Result: ")
 
-# Create main window
+
 root = tk.Tk()
 root.title("Temperature Converter")
 root.geometry("400x350")
 root.configure(bg="#E3F2FD")
 
-# Title
+
 title_label = tk.Label(
     root,
     text="Temperature Converter",
@@ -37,7 +37,7 @@ title_label = tk.Label(
 )
 title_label.pack(pady=20)
 
-# Input frame
+
 input_frame = tk.Frame(root, bg="#E3F2FD")
 input_frame.pack(pady=20)
 
@@ -52,7 +52,7 @@ label_temp.pack(side=tk.LEFT, padx=5)
 entry_temp = tk.Entry(input_frame, font=("Arial", 12), width=15)
 entry_temp.pack(side=tk.LEFT, padx=5)
 
-# Button frame
+
 button_frame = tk.Frame(root, bg="#E3F2FD")
 button_frame.pack(pady=20)
 
@@ -92,7 +92,7 @@ btn_clear = tk.Button(
 )
 btn_clear.pack(pady=5)
 
-# Result label
+
 label_result = tk.Label(
     root,
     text="Result: ",

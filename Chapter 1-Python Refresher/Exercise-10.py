@@ -1,15 +1,15 @@
-# Create a dictionary with film data
+
 film = {
-    "Title": "Inception",
-    "Director": "Christopher Nolan",
-    "Year": 2010,
-    "Genre": "Science Fiction",
+    "Title": "Home Alone",
+    "Director": "Cris Columbus",
+    "Year": 1990,
+    "Genre": "American Christmas",
     "Rating": 8.8,
-    "Lead Actor": "Leonardo DiCaprio"
+    "Lead Actor": "Macaulay Culkin"
 }
 
-# Display film details using loop
+#  here we use  for loop to print the dictionary's key and values, until all of them are printed.
 print("Film Details:")
-print("-" * 40)
+print("-" * 40) # this is not necessary just to divide the first output from the rest.
 for key, value in film.items():
     print(f"{key}: {value}")

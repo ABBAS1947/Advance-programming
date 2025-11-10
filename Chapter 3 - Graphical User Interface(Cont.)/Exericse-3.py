@@ -27,13 +27,12 @@ def calculate_rectangle():
     except ValueError:
         label_rect_result.config(text="Please enter valid numbers!")
 
-# Create main window
+
 root = tk.Tk()
 root.title("Area Calculator")
 root.geometry("500x400")
 root.configure(bg="#F5F5F5")
 
-# Title
 title_label = tk.Label(
     root,
     text="Area Calculator",
@@ -43,11 +42,11 @@ title_label = tk.Label(
 )
 title_label.pack(pady=20)
 
-# Create notebook (tabbed interface)
+
 notebook = ttk.Notebook(root)
 notebook.pack(fill=tk.BOTH, expand=True, padx=20, pady=10)
 
-# Circle Tab
+
 circle_frame = tk.Frame(notebook, bg="#E3F2FD")
 notebook.add(circle_frame, text="Circle")
 
@@ -90,7 +89,7 @@ label_circle_result = tk.Label(
 )
 label_circle_result.pack(pady=20)
 
-# Square Tab
+
 square_frame = tk.Frame(notebook, bg="#FFF9C4")
 notebook.add(square_frame, text="Square")
 
@@ -133,7 +132,7 @@ label_square_result = tk.Label(
 )
 label_square_result.pack(pady=20)
 
-# Rectangle Tab
+
 rect_frame = tk.Frame(notebook, bg="#E8F5E9")
 notebook.add(rect_frame, text="Rectangle")
 

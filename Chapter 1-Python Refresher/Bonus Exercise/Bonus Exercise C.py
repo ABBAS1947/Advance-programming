@@ -33,7 +33,7 @@ def calculator():
         print("Invalid choice!")
 
 
-# Main program
+
 continue_calc = "yes"
 
 while continue_calc.lower() == "yes":

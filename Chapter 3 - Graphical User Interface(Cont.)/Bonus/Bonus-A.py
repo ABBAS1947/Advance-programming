@@ -9,7 +9,7 @@ class BurgerShackApp:
         self.root.geometry("650x700")
         self.root.configure(bg="#FFF3E0")
 
-        # Prices
+
         self.burger_prices = {"Beef Burger": 8.99, "Chicken Burger": 7.99, "Veggie Burger": 6.99}
         self.topping_prices = {"Cheese": 1.50, "Bacon": 2.00, "Avocado": 1.75, "Egg": 1.25}
         self.condiment_prices = {"Ketchup": 0.25, "Mayonnaise": 0.25, "BBQ Sauce": 0.50, "Mustard": 0.25}
@@ -18,7 +18,7 @@ class BurgerShackApp:
         self.create_widgets()
 
     def create_widgets(self):
-        # Title
+
         title_label = tk.Label(
             self.root,
             text="🍔 Burger Shack 🍔",
@@ -28,11 +28,11 @@ class BurgerShackApp:
         )
         title_label.pack(pady=15)
 
-        # Main frame with scrollbar
+
         main_frame = tk.Frame(self.root, bg="#FFF3E0")
         main_frame.pack(fill=tk.BOTH, expand=True, padx=10)
 
-        # Burger selection
+
         burger_frame = tk.LabelFrame(
             main_frame,
             text="Select Your Burger",
@@ -54,7 +54,7 @@ class BurgerShackApp:
             )
             rb.pack(anchor=tk.W, padx=20, pady=3)
 
-        # Toppings
+
         topping_frame = tk.LabelFrame(
             main_frame,
             text="Select Toppings",
@@ -77,7 +77,7 @@ class BurgerShackApp:
             )
             cb.pack(anchor=tk.W, padx=20, pady=2)
 
-        # Condiments
+
         condiment_frame = tk.LabelFrame(
             main_frame,
             text="Select Condiments",
@@ -100,7 +100,7 @@ class BurgerShackApp:
             )
             cb.pack(anchor=tk.W, padx=20, pady=2)
 
-        # Sides
+
         side_frame = tk.LabelFrame(
             main_frame,
             text="Select Sides & Drinks",
@@ -123,7 +123,7 @@ class BurgerShackApp:
             )
             cb.pack(anchor=tk.W, padx=20, pady=2)
 
-        # Buttons
+
         button_frame = tk.Frame(self.root, bg="#FFF3E0")
         button_frame.pack(pady=10)
 
@@ -153,25 +153,25 @@ class BurgerShackApp:
         total = 0
         order_items = []
 
-        # Burger
+
         burger = self.burger_var.get()
         if burger:
             total += self.burger_prices[burger]
             order_items.append(f"{burger}: ${self.burger_prices[burger]:.2f}")
 
-        # Toppings
+
         for topping, var in self.topping_vars.items():
             if var.get():
                 total += self.topping_prices[topping]
                 order_items.append(f"  + {topping}: ${self.topping_prices[topping]:.2f}")
 
-        # Condiments
+
         for condiment, var in self.condiment_vars.items():
             if var.get():
                 total += self.condiment_prices[condiment]
                 order_items.append(f"  + {condiment}: ${self.condiment_prices[condiment]:.2f}")
 
-        # Sides
+
         for side, var in self.side_vars.items():
             if var.get():
                 total += self.side_prices[side]
@@ -186,13 +186,13 @@ class BurgerShackApp:
 
         total, order_items = self.calculate_total()
 
-        # Create payment window
+
         payment_window = tk.Toplevel(self.root)
         payment_window.title("Payment")
         payment_window.geometry("400x450")
         payment_window.configure(bg="#E8F5E9")
 
-        # Order summary
+
         tk.Label(
             payment_window,
             text="Order Summary",
@@ -216,7 +216,7 @@ class BurgerShackApp:
         order_text.insert(tk.END, f"Total: ${total:.2f}\n")
         order_text.config(state=tk.DISABLED)
 
-        # Payment input
+
         payment_frame = tk.Frame(payment_window, bg="#E8F5E9")
         payment_frame.pack(pady=10)
 
@@ -273,7 +273,7 @@ class BurgerShackApp:
             var.set(False)
 
 
-# Create main window
+
 root = tk.Tk()
 app = BurgerShackApp(root)
 root.mainloop()

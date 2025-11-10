@@ -4,13 +4,13 @@ from tkinter import messagebox
 
 def draw_shape():
     shape = shape_var.get()
-    canvas.delete("all")  # Clear canvas
+    canvas.delete("all")
 
     if not shape:
         messagebox.showerror("Error", "Please select a shape!")
         return
 
-    # Get coordinates if extension is implemented
+
     try:
         x1 = int(entry_x1.get()) if entry_x1.get() else 50
         y1 = int(entry_y1.get()) if entry_y1.get() else 50
@@ -20,17 +20,17 @@ def draw_shape():
         messagebox.showerror("Error", "Please enter valid coordinates!")
         return
 
-    # Draw the selected shape
+
     if shape == "Oval":
         canvas.create_oval(x1, y1, x2, y2, fill="lightblue", outline="blue", width=3)
     elif shape == "Rectangle":
         canvas.create_rectangle(x1, y1, x2, y2, fill="lightgreen", outline="green", width=3)
     elif shape == "Square":
-        # For square, use the smaller dimension
+
         size = min(x2 - x1, y2 - y1)
         canvas.create_rectangle(x1, y1, x1 + size, y1 + size, fill="lightyellow", outline="orange", width=3)
     elif shape == "Triangle":
-        # Create triangle using polygon
+
         mid_x = (x1 + x2) / 2
         canvas.create_polygon(mid_x, y1, x1, y2, x2, y2, fill="lightcoral", outline="red", width=3)
 
@@ -44,13 +44,13 @@ def clear_canvas():
     entry_y2.delete(0, tk.END)
 
 
-# Create main window
+
 root = tk.Tk()
 root.title("Shape Drawing Application")
 root.geometry("700x600")
 root.configure(bg="#F0F0F0")
 
-# Title
+
 title_label = tk.Label(
     root,
     text="Shape Drawing Tool",
@@ -60,11 +60,11 @@ title_label = tk.Label(
 )
 title_label.pack(pady=10)
 
-# Control frame
+
 control_frame = tk.Frame(root, bg="#E8EAF6", bd=3, relief=tk.RAISED)
 control_frame.pack(padx=10, pady=10, fill=tk.X)
 
-# Shape selection
+
 tk.Label(
     control_frame,
     text="Select Shape:",
@@ -86,7 +86,7 @@ for i, shape in enumerate(shapes):
     )
     rb.grid(row=0, column=i + 1, padx=5, pady=10)
 
-# Coordinate inputs (Extension)
+
 coord_frame = tk.LabelFrame(
     control_frame,
     text="Coordinates (Optional - Default: 50,50,250,250)",
@@ -111,7 +111,7 @@ tk.Label(coord_frame, text="Y2:", font=("Arial", 10), bg="#E8EAF6").grid(row=0, 
 entry_y2 = tk.Entry(coord_frame, font=("Arial", 10), width=8)
 entry_y2.grid(row=0, column=7, padx=5, pady=5)
 
-# Buttons
+
 button_frame = tk.Frame(control_frame, bg="#E8EAF6")
 button_frame.grid(row=2, column=0, columnspan=5, pady=10)
 
@@ -137,7 +137,7 @@ btn_clear = tk.Button(
 )
 btn_clear.pack(side=tk.LEFT, padx=5)
 
-# Canvas
+
 canvas = tk.Canvas(root, width=650, height=400, bg="white", bd=3, relief=tk.SUNKEN)
 canvas.pack(padx=10, pady=10)
 
